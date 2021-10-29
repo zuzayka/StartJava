@@ -25,7 +25,7 @@ class ConditionalStatement {
         } else if(firstNameLatter == 'I') {
             System.out.println("Person first latter of name is I");
         } else {
-            System.out.println("Message to person \"We will contact you later \"");
+            System.out.println("Message to person \"We will contact you later\"");
         }
     }
 }
