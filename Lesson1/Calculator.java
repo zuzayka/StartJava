@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 class Calculator {
     public static void main(String[] args) {
-        String annotation = "    Внимание!!!\n Консольный java калькулятор выводит в консоль результат"
+        String annotation = "\tВнимание!!!\n Консольный java калькулятор выводит в консоль результат"
                 + "\nматематической операции над двумя положительными натуральными"
                 + "\nнатуральными числами. Знак математической операции (+ сложение, - вычитание,"
                 + "\n* умножение, / деление, ^ возведение в степень, % вычисление"
@@ -28,35 +28,30 @@ class Calculator {
             }
             
             System.out.println("Введите второе число");
-            String second = scanner.nextLine();
-            int secondNum;
-            try {
-                secondNum = Integer.parseInt(second);
-            } catch (NumberFormatException e) {  
-                System.err.println("Неправильный формат ввода второго числа!");
+            int secondNum = 0;
+            if (scanner.hasNextInt()) {
+                secondNum = scanner.nextInt();
+            } else {
+                System.out.println("Неправильный формат ввода второго числа!");
                 continue;
             }
 
-            int result;
             long resultLong;
-            double resultDouble;
             System.out.println("Введите символ математической операции");
+            String temp = scanner.nextLine();
             String operator = scanner.nextLine();
             if (operator.equals("+")) {
-                result = firstNum + secondNum;
-                System.out.println("Сумма двух чисел: " + result);
+                System.out.println("Сумма двух чисел: " + (firstNum + secondNum));
                 continue;
             } else if (operator.equals("-")) {
-                result = firstNum - secondNum;
-                System.out.println("Разность двух чисел: " + result);
+                System.out.println("Разность двух чисел: " + (firstNum - secondNum));
                 continue;
             } else if (operator.equals("*")) {
                 resultLong = firstNum * secondNum;
-                System.out.println("Произведение двух чисел: " + resultLong);
+                System.out.println("Произведение двух чисел: " + ((long) firstNum * (long) secondNum));
                 continue;
             } else if (operator.equals("/")) {
-                resultDouble = (double) firstNum / (double) secondNum;
-                System.out.println("Частное двух чисел: " + resultDouble);
+                System.out.println("Частное двух чисел: " + ((double) firstNum / (double) secondNum));
                 continue;
             } else if (operator.equals("^")) {
                 resultLong = 1;
@@ -66,8 +61,7 @@ class Calculator {
                 System.out.println("Возведение в сепень: " + resultLong);
                 continue;
             } else if (operator.equals("%")) {
-                result = firstNum % secondNum;
-                System.out.println("Остаток от деления двух чисел: " + result);
+                System.out.println("Остаток от деления двух чисел: " + (firstNum % secondNum));
                 continue;
             } else {
                 System.out.println("Неправильный формат ввода символа математической операции!");
