@@ -1,29 +1,29 @@
 public class MyFirstGame {
     public static void main(String[] args) {
-        int pcChoice = (int) (Math.random() * 101);
-        System.out.println("pc think number: " + pcChoice + "\n");
-        System.out.println(findNum(pcChoice));
+        int targetNumber = (int) (Math.random() * 101);
+        System.out.println("pc think number: " + targetNumber + "\n");
+        System.out.println(findNum(targetNumber));
     }
 
-    public static int findNum(int askNum) {
-        int num = 50;
+    public static int findNum(int targetNumber) {
+        int playerNumber = 50;
         int stepNum = 64;
-        while (num != askNum) {
-            System.out.println(num);
+        while (playerNumber != targetNumber) {
+            System.out.println(playerNumber);
             stepNum /= 2;
-            if (num < askNum) {
-                num += stepNum;
-                if (num > 100) {
-                    num = 100;
+            if (playerNumber < targetNumber) {
+                playerNumber += stepNum;
+                if (playerNumber > 100) {
+                    playerNumber = 100;
                 }
                 continue;
-            } else if (num > askNum) {
-                num -= stepNum;
-                if (num < 0) {
-                    num = 0;
+            } else if (playerNumber > targetNumber) {
+                playerNumber -= stepNum;
+                if (playerNumber < 0) {
+                    playerNumber = 0;
                 }
             }
         }
-        return num;
+        return playerNumber;
     }
 }
