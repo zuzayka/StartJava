@@ -6,5 +6,6 @@ public class Unicode {
             }
             System.out.print((char) i + " ");
         }
+        System.out.println("");
     }
 }
