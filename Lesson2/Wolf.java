@@ -1,4 +1,4 @@
-class Wolf{
+class Wolf {
     private String sex;
     private String name;
     private float weight;
@@ -52,8 +52,6 @@ class Wolf{
     public int getAge() {
         return age;
     }
-
-
 
     public String getColor() {
         return color;
