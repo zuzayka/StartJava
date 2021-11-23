@@ -29,7 +29,7 @@ class Wolf {
         return sex;
     }
 
-        public void setSex(String sex) {
+    public void setSex(String sex) {
             this.sex = sex;
     }
 
@@ -61,7 +61,7 @@ class Wolf {
         this.color = color;
     }
 
-        public void setAge(int age) {
+    public void setAge(int age) {
         if (age < 0 || age > 8) {
             System.out.println("Некорректный возраст");
         } else {
