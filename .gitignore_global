@@ -1,4 +1,4 @@
 #комментарий к файлу .gitignore
 #все class-файлы...
-!*.java
+*.class
 #Lesson2/*.class
