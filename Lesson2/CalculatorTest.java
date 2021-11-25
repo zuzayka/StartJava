@@ -16,7 +16,6 @@ class CalculatorTest {
         char operator;
         while (true) {
             System.out.println("Введите первое число: ");
-            //String first = scanner.nextLine();
             try {
                 firstNumber = Integer.parseInt(scanner.nextLine());
             } catch (NumberFormatException e) {
