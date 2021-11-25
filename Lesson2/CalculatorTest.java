@@ -23,7 +23,6 @@ class CalculatorTest {
                 continue;
             }
             calc.setFirstNum(firstNumber);
-
             System.out.println("Введите символ математической операции");
             operator = scanner.next().charAt(0);
             calc.setOperator(operator);
