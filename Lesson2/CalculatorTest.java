@@ -31,7 +31,6 @@ class CalculatorTest {
 
             // Для отсеивания последствий scanner.next().charAt(0)
             scanner.nextLine();
-
             System.out.println("Введите второе число: ");
             try {
                 secondNumber = Integer.parseInt(scanner.nextLine());
