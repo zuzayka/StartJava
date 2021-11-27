@@ -1,10 +1,9 @@
 class Calculator {
-    private int firstNum;
-    private int secondNum;
-    private char operator;
+    private static int firstNum;
+    private static int secondNum;
+    private static char operator;
 
-    public void setFirstNum(int firstNum)
-    {
+    public void setFirstNum(int firstNum) {
         this.firstNum = firstNum;
     }
 
@@ -17,28 +16,28 @@ class Calculator {
     }
 
     public void calculate() {
-        long resultLong = 1;
-        switch (this.operator) {
+        long result = 1;
+        switch (Calculator.operator) {
             case '+':
-                System.out.println("Сумма двух чисел: " + (this.firstNum + this.secondNum));
+                System.out.println("Сумма двух чисел: " + (Calculator.firstNum + Calculator.secondNum));
                 break;
             case '-':
-                System.out.println("Разность двух чисел: " + (this.firstNum - this.secondNum));
+                System.out.println("Разность двух чисел: " + (Calculator.firstNum - Calculator.secondNum));
                 break;
             case '*':
-                System.out.println("Произведение двух чисел: " + ((long) this.firstNum * (long) this.secondNum));
+                System.out.println("Произведение двух чисел: " + ((long) Calculator.firstNum * (long) Calculator.secondNum));
                 break;
             case '/':
-                System.out.println("Частное двух чисел: " + ((double) this.firstNum / (double) this.secondNum));
+                System.out.println("Частное двух чисел: " + ((double) Calculator.firstNum / (double) Calculator.secondNum));
                 break;
             case '^':
-                for (int i = 0; i < this.secondNum; i++) {
-                    resultLong *= this.firstNum;
+                for (int i = 0; i < Calculator.secondNum; i++) {
+                    result *= Calculator.firstNum;
                 }
-                System.out.println("Возведение в сепень: " + resultLong);
+                System.out.println("Возведение в сепень: " + result);
                 break;
             case '%':
-                System.out.println("Остаток от деления двух чисел: " + (this.firstNum % this.secondNum));
+                System.out.println("Остаток от деления двух чисел: " + (Calculator.firstNum % Calculator.secondNum));
                 break;
             default:
                 System.out.println("Неправильный формат ввода символа математической операции!");

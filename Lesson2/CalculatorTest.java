@@ -2,9 +2,9 @@ import java.util.Scanner;
 
 class CalculatorTest {
     public static void main(String[] args) {
-        String annotation = "\tВнимание!!!\n Консольный java калькулятор выводит в консоль результат"
-                + "\nматематической операции над двумя положительными натуральными"
-                + "\nчислами. Знак математической операции: + сложение, - вычитание,"
+        String annotation = "\tВнимание!!!\n Консольный java калькулятор выводит в консоль результат математической"
+                + "\nоперации над двумя натуральными числами, в подмножество натуральных чисел"
+                + "\nдобавлен ноль. Знак математической операции: + сложение, - вычитание,"
                 + "\n* умножение, / деление, ^ возведение в степень, % вычисление"
                 + "\nостатка от деления целых чисел."
                 + "\nОграничение: результат вычисления не должен превышать 9*10^18.\n\n";
@@ -23,12 +23,14 @@ class CalculatorTest {
                 continue;
             }
             calc.setFirstNum(firstNumber);
+
             System.out.println("Введите символ математической операции");
             operator = scanner.next().charAt(0);
             calc.setOperator(operator);
 
             // Для отсеивания последствий scanner.next().charAt(0)
             scanner.nextLine();
+
             System.out.println("Введите второе число: ");
             try {
                 secondNumber = Integer.parseInt(scanner.nextLine());
@@ -37,6 +39,7 @@ class CalculatorTest {
                 continue;
             }
             calc.setSecondNum(secondNumber);
+
             calc.calculate();
             while (true) {
                 System.out.println("Хотите продолжить вычисления? [yes/no]:");
