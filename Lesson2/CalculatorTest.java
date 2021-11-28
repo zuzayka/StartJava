@@ -48,9 +48,7 @@ class CalculatorTest {
                 System.out.println("Хотите продолжить вычисления? [yes/no]:");
                 calculatorClosure = scanner.nextLine();
             }
-                if (calculatorClosure.equals("no")) {
-                    return;
-                }
         }
+        return;
     }
 }
