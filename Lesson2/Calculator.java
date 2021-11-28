@@ -16,7 +16,6 @@ class Calculator {
     }
 
     public void calculate() {
-        long result = 1;
         switch (Calculator.operator) {
             case '+':
                 System.out.println("Сумма двух чисел: " + (Calculator.firstNum + Calculator.secondNum));
@@ -31,6 +30,7 @@ class Calculator {
                 System.out.println("Частное двух чисел: " + ((double) Calculator.firstNum / (double) Calculator.secondNum));
                 break;
             case '^':
+                long result = 1;
                 for (int i = 0; i < Calculator.secondNum; i++) {
                     result *= Calculator.firstNum;
                 }

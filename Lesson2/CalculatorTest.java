@@ -14,7 +14,8 @@ class CalculatorTest {
         int firstNumber;
         int secondNumber;
         char operator;
-        while (true) {
+        String calculatorClosure = "yes";
+        while (calculatorClosure.equals("yes")) {
             System.out.println("Введите первое число: ");
             try {
                 firstNumber = Integer.parseInt(scanner.nextLine());
@@ -41,17 +42,15 @@ class CalculatorTest {
             calc.setSecondNum(secondNumber);
 
             calc.calculate();
-            while (true) {
+            System.out.println("Хотите продолжить вычисления? [yes/no]:");
+            calculatorClosure = scanner.nextLine();
+            while (!(calculatorClosure.equals("yes") || calculatorClosure.equals("no"))) {
                 System.out.println("Хотите продолжить вычисления? [yes/no]:");
-                String calculatorClosure = scanner.nextLine();
-                if (calculatorClosure.equals("yes")) {
-                    break;
-                } else if (calculatorClosure.equals("no")) {
-                    return;
-                } else {
-                    continue;
-                }
+                calculatorClosure = scanner.nextLine();
             }
+                if (calculatorClosure.equals("no")) {
+                    return;
+                }
         }
     }
 }
