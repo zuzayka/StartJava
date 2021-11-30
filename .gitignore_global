@@ -1,4 +1,0 @@
-#комментарий к файлу .gitignore
-#все class-файлы...
-*.class
-#Lesson2/*.class
