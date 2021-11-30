@@ -2,3 +2,5 @@
 #все class-файлы...
 *.class
 #Lesson2/*.class
+#gitignore
+.gitignore_global
