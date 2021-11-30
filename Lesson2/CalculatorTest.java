@@ -42,13 +42,11 @@ class CalculatorTest {
             calc.setSecondNum(secondNumber);
 
             calc.calculate();
-            System.out.println("Хотите продолжить вычисления? [yes/no]:");
-            calculatorClosure = scanner.nextLine();
-            while (!(calculatorClosure.equals("yes") || calculatorClosure.equals("no"))) {
+            do {
                 System.out.println("Хотите продолжить вычисления? [yes/no]:");
                 calculatorClosure = scanner.nextLine();
             }
+            while (!calculatorClosure.equals("yes") && !calculatorClosure.equals("no"));
         }
-        return;
     }
 }
