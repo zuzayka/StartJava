@@ -1,7 +1,7 @@
 class Calculator {
-    private static int firstNum;
-    private static int secondNum;
-    private static char operator;
+    private int firstNum;
+    private int secondNum;
+    private char operator;
 
     public void setFirstNum(int firstNum) {
         this.firstNum = firstNum;
@@ -16,28 +16,28 @@ class Calculator {
     }
 
     public void calculate() {
-        switch (Calculator.operator) {
+        switch (operator) {
             case '+':
-                System.out.println("Сумма двух чисел: " + (Calculator.firstNum + Calculator.secondNum));
+                System.out.println("Сумма двух чисел: " + (firstNum + secondNum));
                 break;
             case '-':
-                System.out.println("Разность двух чисел: " + (Calculator.firstNum - Calculator.secondNum));
+                System.out.println("Разность двух чисел: " + (firstNum - secondNum));
                 break;
             case '*':
-                System.out.println("Произведение двух чисел: " + ((long) Calculator.firstNum * (long) Calculator.secondNum));
+                System.out.println("Произведение двух чисел: " + ((long) firstNum * (long) secondNum));
                 break;
             case '/':
-                System.out.println("Частное двух чисел: " + ((double) Calculator.firstNum / (double) Calculator.secondNum));
+                System.out.println("Частное двух чисел: " + ((double) firstNum / (double) secondNum));
                 break;
             case '^':
                 long result = 1;
-                for (int i = 0; i < Calculator.secondNum; i++) {
-                    result *= Calculator.firstNum;
+                for (int i = 0; i < secondNum; i++) {
+                    result *= firstNum;
                 }
                 System.out.println("Возведение в сепень: " + result);
                 break;
             case '%':
-                System.out.println("Остаток от деления двух чисел: " + (Calculator.firstNum % Calculator.secondNum));
+                System.out.println("Остаток от деления двух чисел: " + (firstNum % secondNum));
                 break;
             default:
                 System.out.println("Неправильный формат ввода символа математической операции!");
