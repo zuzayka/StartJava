@@ -1,20 +1,10 @@
 class JaegerTest {
     public static void main(String[] args) {
-        Jaeger gipsyAvenger = new Jaeger();
-        gipsyAvenger.setModelName("Gipsy Avenger");
-        gipsyAvenger.setMark("Mark-6");
-        gipsyAvenger.setWeight(2.004f);
-        gipsyAvenger.setHeight(81.77f);
-        gipsyAvenger.setStrength(85);
-        gipsyAvenger.setCombat(55);
+        Jaeger gipsyAvenger = new Jaeger("Gipsy Avenger",
+            "Mark-6", 2.004f, 81.77f, 85, 55);
 
-        Jaeger saberAthena = new Jaeger();
-        saberAthena.setModelName("Saber Athena");
-        saberAthena.setMark("Mark-7");
-        saberAthena.setWeight(1.628f);
-        saberAthena.setHeight(76.91f);
-        saberAthena.setStrength(75);
-        saberAthena.setCombat(55);
+        Jaeger saberAthena = new Jaeger("Saber Athena",
+                "Mark-7", 1.628f, 76.91f, 75, 55);
 
         System.out.println(gipsyAvenger.getModelName());
         gipsyAvenger.move();
@@ -35,8 +25,5 @@ class JaegerTest {
         gipsyAvenger.setCombat(60);
         System.out.println(gipsyAvenger.getStrength());
         System.out.println(gipsyAvenger.getCombat());
-
-
-
     }
 }
