@@ -8,9 +8,9 @@ public class GuessNumber {
     int tempInt;
     Player firstPlayer = new Player(tempString, tempInt);
     Player secondPlayer = new Player(tempString, tempInt);
-    int targetNum = (int) (Math.random() * 100) + 1;
 
     public void play(Player firstPlayer, Player secondPlayer) {
+        int targetNum = (int) (Math.random() * 100) + 1;
         while (true) {
             if ((i + 1) % 2 == 0) {
                 do {
