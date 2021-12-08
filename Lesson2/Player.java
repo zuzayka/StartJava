@@ -19,7 +19,7 @@ public class Player {
 
     public void setNumber() {
         do {
-                this.number = Integer.parseInt(scanner.nextLine());
-            } while (!(this.number > 0) || !(this.number <= 100));
+                number = Integer.parseInt(scanner.nextLine());
+            } while (!(number > 0) || !(number <= 100));
     }
 }
