@@ -5,15 +5,12 @@ class GuessNumberTest {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Первый игрок, введите свое имя:");
-        String namePlayerOne;
-        namePlayerOne = scanner.nextLine();
-        GuessNumber game = new GuessNumber();
-        Player playerOne = new Player(namePlayerOne);
+        Player playerOne = new Player(scanner.nextLine());
 
         System.out.println("Второй игрок, введите свое имя:");
-        String namePlayerTwo;
-        namePlayerTwo = scanner.nextLine();
-        Player playerTwo = new Player(namePlayerTwo);
+        Player playerTwo = new Player(scanner.nextLine());
+
+        GuessNumber game = new GuessNumber(playerOne, playerTwo);
 
         String closureRequest;
         do {

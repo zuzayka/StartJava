@@ -1,9 +1,6 @@
-import java.util.Scanner;
-
 public class Player {
     private String name;
     private int number;
-    private Scanner scanner = new Scanner(System.in);
 
     Player(String name) {
         this.name = name;
@@ -17,9 +14,12 @@ public class Player {
         return number;
     }
 
-    public void setNumber() {
-        do {
-                number = Integer.parseInt(scanner.nextLine());
-            } while (!(number > 0) || !(number <= 100));
+    public boolean setNumber(int number) {
+        this.number = number;
+        if (!(number > 0) || !(number <= 100)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
