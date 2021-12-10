@@ -14,7 +14,7 @@ class GuessNumberTest {
 
         String closureRequest;
         do {
-            game.play(playerOne, playerTwo);
+            game.play();
             do {
                 System.out.println("Хотите продолжить игру? [yes/no]");
                 closureRequest = scanner.nextLine();

@@ -3,14 +3,14 @@ import java.util.Scanner;
 public class GuessNumber {
     private Player player1;
     private Player player2;
+    Scanner scanner = new Scanner(System.in);
 
     GuessNumber(Player player1, Player player2) {
         this.player1 = player1;
         this.player2 = player2;
     }
-    Scanner scanner = new Scanner(System.in);
 
-    public void play(Player player1, Player player2) {
+    public void play() {
         int playerNumber;
         int targetNum = (int) (Math.random() * 100) + 1;
         while (true) {
