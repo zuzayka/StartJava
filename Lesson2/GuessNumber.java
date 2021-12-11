@@ -14,13 +14,11 @@ public class GuessNumber {
         int playerNumber;
         int targetNum = (int) (Math.random() * 100) + 1;
         while (true) {
-            System.out.println(player1.getName() + ", введите число:");
-            playerNumber = Integer.parseInt(scanner.nextLine());
-            while(player1.setNumber(playerNumber)) {
+            do {
                 System.out.println(player1.getName() + ", введите число:");
                 playerNumber = Integer.parseInt(scanner.nextLine());
                 player1.setNumber(playerNumber);
-            }
+            } while (!player1.setNumber(playerNumber));
             if (player1.getNumber() == targetNum) {
                 System.out.println(player1.getName() + ", примите поздравления! Число угадано!");
                 break;
@@ -30,13 +28,11 @@ public class GuessNumber {
                 System.out.println("Данное число меньше того, что загадал компьютер");
             }
 
-            System.out.println(player2.getName() + ", введите число:");
-            playerNumber = Integer.parseInt(scanner.nextLine());
-            while(player2.setNumber(playerNumber)) {
+            do {
                 System.out.println(player2.getName() + ", введите число:");
                 playerNumber = Integer.parseInt(scanner.nextLine());
                 player2.setNumber(playerNumber);
-            }
+            } while(!player2.setNumber(playerNumber));
             if (player2.getNumber() == targetNum) {
                 System.out.println(player2.getName() + ", примите поздравления! Число угадано!");
                 break;
