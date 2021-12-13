@@ -18,7 +18,7 @@ public class GuessNumber {
                 System.out.println(player1.getName() + ", введите число:");
                 playerNumber = Integer.parseInt(scanner.nextLine());
                 player1.setNumber(playerNumber);
-            } while (!player1.setNumber(playerNumber));
+            } while (player1.getNumber() <= 0 || player1.getNumber() > 100);
             if (player1.getNumber() == targetNum) {
                 System.out.println(player1.getName() + ", примите поздравления! Число угадано!");
                 break;
@@ -32,7 +32,7 @@ public class GuessNumber {
                 System.out.println(player2.getName() + ", введите число:");
                 playerNumber = Integer.parseInt(scanner.nextLine());
                 player2.setNumber(playerNumber);
-            } while(!player2.setNumber(playerNumber));
+            } while(player2.getNumber() <= 0 || player2.getNumber() > 100);
             if (player2.getNumber() == targetNum) {
                 System.out.println(player2.getName() + ", примите поздравления! Число угадано!");
                 break;
