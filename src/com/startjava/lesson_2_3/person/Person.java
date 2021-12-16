@@ -1,3 +1,5 @@
+package com.startjava.lesson_2_3.person;
+
 public class Person {
     String sex = "male";
     String name = "John";
@@ -21,7 +23,7 @@ public class Person {
         System.out.println("Hi there!");
     }
 
-    void learnJava {
+    void learnJava() {
         System.out.println("learning Java");
     }
 }
