@@ -8,3 +8,7 @@
 
 #все class-файлы...
 *.class
+
+# добавила Intellij IDEA
+Java.iml
+/.idea
