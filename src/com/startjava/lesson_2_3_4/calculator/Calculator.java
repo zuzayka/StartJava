@@ -1,23 +1,7 @@
-package com.startjava.lesson_2_3.calculator;
+package com.startjava.lesson_2_3_4.calculator;
 
 class Calculator {
-    private int firstNum;
-    private int secondNum;
-    private char operator;
-
-    public void setFirstNum(int firstNum) {
-        this.firstNum = firstNum;
-    }
-
-    public void setSecondNum(int secondNum) {
-        this.secondNum = secondNum;
-    }
-
-    public void setOperator(char operator) {
-        this.operator = operator;
-    }
-
-    public void calculate() {
+    public static void calculate(int firstNum, int secondNum, char operator) {
         switch (operator) {
             case '+':
                 System.out.println("Сумма двух чисел: " + (firstNum + secondNum));
@@ -32,11 +16,7 @@ class Calculator {
                 System.out.println("Частное двух чисел: " + ((double) firstNum / (double) secondNum));
                 break;
             case '^':
-                long result = 1;
-                for (int i = 0; i < secondNum; i++) {
-                    result *= firstNum;
-                }
-                System.out.println("Возведение в сепень: " + result);
+                System.out.println("Возведение в сепень: " + (long) Math.pow(firstNum, secondNum));
                 break;
             case '%':
                 System.out.println("Остаток от деления двух чисел: " + (firstNum % secondNum));

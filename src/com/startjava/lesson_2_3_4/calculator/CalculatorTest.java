@@ -1,4 +1,4 @@
-package com.startjava.lesson_2_3.calculator;
+package com.startjava.lesson_2_3_4.calculator;
 
 import java.util.Scanner;
 
@@ -12,40 +12,33 @@ class CalculatorTest {
                 + "\nОграничение: результат вычисления не должен превышать 9*10^18.\n\n";
         System.out.println(annotation);
         Scanner scanner = new Scanner(System.in);
-        Calculator calc = new Calculator();
-        int firstNumber;
-        int secondNumber;
-        char operator;
         String calculatorClosure = "yes";
         while (calculatorClosure.equals("yes")) {
-            System.out.println("Введите первое число: ");
+            System.out.println("Введите математическое выражение: ");
+            String[] expression;
+            expression = scanner.nextLine().split(" ");
+            int firstNumber;
             try {
-                firstNumber = Integer.parseInt(scanner.nextLine());
+                firstNumber = Integer.parseInt(expression[0]);
             } catch (NumberFormatException e) {
-                System.err.println("Неправильный формат ввода первого числа!");
+                System.out.println("Неправильный формат ввода первого числа!");
                 continue;
             }
-            calc.setFirstNum(firstNumber);
-
-            System.out.println("Введите символ математической операции");
-            operator = scanner.next().charAt(0);
-            calc.setOperator(operator);
-
-            // Для отсеивания последствий scanner.next().charAt(0)
-            scanner.nextLine();
-
-            System.out.println("Введите второе число: ");
+            int secondNumber;
             try {
-                secondNumber = Integer.parseInt(scanner.nextLine());
+                secondNumber = Integer.parseInt(expression[2]);
             } catch (NumberFormatException e) {
-                System.err.println("Неправильный формат ввода второго числа!");
+                System.out.println("Неправильный формат ввода второго числа!");
                 continue;
             }
-            calc.setSecondNum(secondNumber);
-
-            calc.calculate();
+            if (firstNumber < 0 || secondNumber < 0) {
+                System.out.println("Вычисления производятся тольео над неотрицательными числами!");
+                continue;
+            }
+            char operator = expression[1].charAt(0);
+            Calculator.calculate(firstNumber, secondNumber, operator);
             do {
-                System.out.println("Хотите продолжить вычисления? [yes/no]:");
+                System.out.println("Хотите продолжить вычисления? [yes/no]: ");
                 calculatorClosure = scanner.nextLine();
             }
             while (!calculatorClosure.equals("yes") && !calculatorClosure.equals("no"));
