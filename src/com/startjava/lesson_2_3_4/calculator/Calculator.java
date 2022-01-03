@@ -44,4 +44,5 @@ class Calculator {
             }
         return result;
     }
+
 }
