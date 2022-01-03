@@ -23,4 +23,6 @@ public class Player {
         }
         return false;
     }
+
+    static int[] numbers = new int[10];
 }
