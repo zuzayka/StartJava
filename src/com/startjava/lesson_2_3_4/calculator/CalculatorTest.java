@@ -12,7 +12,6 @@ class CalculatorTest {
                 + "\nОграничение: результат вычисления не должен превышать 9*10^18.\n\n";
         System.out.println(annotation);
         Scanner scanner = new Scanner(System.in);
-
         String calculatorTerminating = "yes";
         while (calculatorTerminating.equals("yes")) {
             System.out.println("Введите математическое выражение: ");
