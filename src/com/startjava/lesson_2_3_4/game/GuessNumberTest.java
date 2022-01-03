@@ -14,13 +14,13 @@ class GuessNumberTest {
 
         GuessNumber game = new GuessNumber(playerOne, playerTwo);
 
-        String closureRequest;
+        String terminatingRequest;
         do {
             game.play();
             do {
                 System.out.println("Хотите продолжить игру? [yes/no]");
-                closureRequest = scanner.nextLine();
-            } while (!closureRequest.equals("yes") && !closureRequest.equals("no"));
-        } while (closureRequest.equals("yes"));
+                terminatingRequest = scanner.nextLine();
+            } while (!terminatingRequest.equals("yes") && !terminatingRequest.equals("no"));
+        } while (terminatingRequest.equals("yes"));
     }
 }
