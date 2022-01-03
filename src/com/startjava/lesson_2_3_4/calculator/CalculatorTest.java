@@ -22,5 +22,4 @@ class CalculatorTest {
             } while (!calculatorTerminating.equals("yes") && !calculatorTerminating.equals("no"));
         }
     }
-
 }
