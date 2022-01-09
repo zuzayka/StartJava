@@ -58,5 +58,4 @@ public class GuessNumber {
         }
         return step;
     }
-
 }

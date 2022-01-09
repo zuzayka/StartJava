@@ -50,5 +50,4 @@ class GuessNumberTest {
             } while (!terminatingRequest.equals("yes") && !terminatingRequest.equals("no"));
         } while (terminatingRequest.equals("yes"));
     }
-
 }
