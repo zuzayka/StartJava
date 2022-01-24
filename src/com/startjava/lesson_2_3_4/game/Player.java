@@ -20,13 +20,13 @@ public class Player {
         return numbers;
     }
 
-    public int getNumbers(int i) {
+    public int getNumber(int i) {
         return numbers[i];
     }
 
     Scanner scanner = new Scanner(System.in);
 
-    public void setNumbers(int i) {
+    public void setNumber(int i) {
         int number;
         do {
             System.out.println(name + ", введите число:");

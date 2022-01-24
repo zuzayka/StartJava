@@ -17,11 +17,11 @@ public class GuessNumber {
         player2.setQuantityCalled(0);
         for (int step = 0; step < 5; step++) {
             guess(player1, step, targetNum);
-            if (player1.getNumbers(step) == targetNum) {
+            if (player1.getNumber(step) == targetNum) {
                 break;
             }
             guess(player2, step, targetNum);
-            if (player2.getNumbers(step) == targetNum) {
+            if (player2.getNumber(step) == targetNum) {
                 break;
             }
         }
@@ -31,16 +31,16 @@ public class GuessNumber {
     }
 
     private void guess(Player someplayer, int step, int targetNum) {
-        someplayer.setNumbers(step);
+        someplayer.setNumber(step);
         someplayer.setQuantityCalled();
-        if (someplayer.getNumbers(step) == targetNum) {
-            System.out.println("Игрок " + someplayer.getName() + " угадал число " + someplayer.getNumbers(step) +
+        if (someplayer.getNumber(step) == targetNum) {
+            System.out.println("Игрок " + someplayer.getName() + " угадал число " + someplayer.getNumber(step) +
                     " с " + someplayer.getQuantityCalled() + " попытки.");
         } else if (step == 4) {
             System.out.println("у " + someplayer.getName() + " закончились попытки");
-        } else if (someplayer.getNumbers(step) > targetNum) {
+        } else if (someplayer.getNumber(step) > targetNum) {
             System.out.println("Данное число больше того, чем загадал компьютер");
-        } else if (someplayer.getNumbers(step) < targetNum) {
+        } else if (someplayer.getNumber(step) < targetNum) {
             System.out.println("Данное число меньше того, чем загадал компьютер");
         }
     }
