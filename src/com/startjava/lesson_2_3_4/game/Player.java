@@ -17,7 +17,7 @@ public class Player {
     }
 
     public int[] getNumbers() {
-        return numbers;
+        return Arrays.copyOf(numbers, 5);
     }
 
     public int getNumber(int i) {
@@ -48,7 +48,7 @@ public class Player {
     }
 
     public int[] getCopyNumbers() {
-        return copyNumbers;
+        return Arrays.copyOf(copyNumbers, copyNumbers.length);
     }
 
     public void setCopyNumbers() {
