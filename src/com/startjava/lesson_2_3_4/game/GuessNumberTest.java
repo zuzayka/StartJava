@@ -3,24 +3,20 @@ package com.startjava.lesson_2_3_4.game;
 import java.util.Scanner;
 
 class GuessNumberTest {
-    static Player playerOne = new Player();
-    static Player playerTwo = new Player();
-
     public static void main(String[] args) {
+        System.out.println(GuessNumber.begin);
         Scanner scanner = new Scanner(System.in);
-        System.out.println("В игре участвуют двое. У каждого игрока не более пяти попыток для угадывания числа " + "от 1 до 100.\nПобедитель определяется по результатам трех игр.");
         System.out.println("Первый игрок, введите свое имя:");
-        playerOne.setName(scanner.nextLine());
+        Player playerOne = new Player(scanner.nextLine());
         System.out.println("Второй игрок, введите свое имя:");
-        playerTwo.setName(scanner.nextLine());
+        Player playerTwo = new Player(scanner.nextLine());
+        GuessNumber game = new GuessNumber(playerOne, playerTwo);
 
         String terminatingRequest;
         do {
-            if (GuessNumber.play()) {
-                System.out.println("Победитель выявлен");
-            }
+            game.play();
             do {
-                System.out.println("Хотите продолжить игру? [yes/no]");
+                System.out.println("\nХотите продолжить игру? [yes/no]");
                 terminatingRequest = scanner.nextLine();
             } while (!terminatingRequest.equals("yes") && !terminatingRequest.equals("no"));
         } while (terminatingRequest.equals("yes"));
