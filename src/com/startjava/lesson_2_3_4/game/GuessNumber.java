@@ -1,5 +1,7 @@
 package com.startjava.lesson_2_3_4.game;
 
+import java.util.Scanner;
+
 public class GuessNumber {
     private Player player1;
     private Player player2;
@@ -8,10 +10,8 @@ public class GuessNumber {
         this.player1 = player1;
         this.player2 = player2;
     }
-
-    public static String begin = "В игре участвуют двое. У каждого игрока не более пяти попыток для угадывания ";
-
     public void play() {
+        System.out.println("В игре участвуют двое. У каждого игрока не более пяти попыток для угадывания ");
         int targetNum = (int) (Math.random() * 100) + 1;
         player1.setQuantityCalled(0);
         player2.setQuantityCalled(0);
@@ -26,30 +26,40 @@ public class GuessNumber {
             }
         }
         printNumbers(player1);
-        System.out.println();
         printNumbers(player2);
     }
 
-    private void guess(Player someplayer, int step, int targetNum) {
-        someplayer.setNumber(step);
-        someplayer.setQuantityCalled();
-        if (someplayer.getNumber(step) == targetNum) {
-            System.out.println("Игрок " + someplayer.getName() + " угадал число " + someplayer.getNumber(step) +
-                    " с " + someplayer.getQuantityCalled() + " попытки.");
-        } else if (step == 4) {
-            System.out.println("у " + someplayer.getName() + " закончились попытки");
-        } else if (someplayer.getNumber(step) > targetNum) {
+    Scanner scanner = new Scanner(System.in);
+
+    private void guess(Player player, int step, int targetNum) {
+        numberCall(player, step);
+        player.setQuantityCalled();
+        if (player.getNumber(step) == targetNum) {
+            System.out.println("Игрок " + player.getName() + " угадал число " + player.getNumber(step) +
+                    " с " + player.getQuantityCalled() + " попытки.");
+        } else if (player.getNumber(step) > targetNum) {
             System.out.println("Данное число больше того, чем загадал компьютер");
-        } else if (someplayer.getNumber(step) < targetNum) {
+        } else if (player.getNumber(step) < targetNum) {
             System.out.println("Данное число меньше того, чем загадал компьютер");
+        }
+        if (step == 4) {
+            System.out.println("у " + player.getName() + " закончились попытки");
         }
     }
 
-    private void printNumbers(Player somePlayer) {
-        System.out.print("Игрок " + somePlayer.getName() + " назвал числа ");
-        somePlayer.setCopyNumbers();
-        for (int num : somePlayer.getCopyNumbers()) {
+    private void numberCall(Player player, int i) {
+        boolean b;
+        do {
+            System.out.println(player.getName() + ", введите число:");
+            b = player.setNumber(i, Integer.parseInt(scanner.nextLine()));
+        } while (!b);
+    }
+
+    private void printNumbers(Player player) {
+        System.out.print("Игрок " + player.getName() + " назвал числа ");
+        for (int num : player.getNumbers()) {
             System.out.print(num + " ");
         }
+        System.out.println();
     }
 }
