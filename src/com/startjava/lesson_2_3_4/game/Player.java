@@ -7,7 +7,7 @@ public class Player {
 
     private int[] numbers = new int[5];
 
-    private int quantityCalled;
+    private int countAttempts;
 
     Player(String name) {
         this.name = name;
@@ -18,27 +18,31 @@ public class Player {
     }
 
     public int[] getNumbers() {
-        return Arrays.copyOf(numbers, getQuantityCalled());
+        return Arrays.copyOf(numbers, countAttempts);
     }
 
-    public int getNumber(int i) {
-        return numbers[i];
+    public int getCurrentNumber() {
+        return numbers[countAttempts - 1];
     }
 
-    public boolean setNumber(int i, int number) {
-        numbers[i] = number;
-        return number <= 100 && number > 0;
+    public boolean setNumber(int number) {
+        if (number <= 100 && number > 0) {
+            numbers[countAttempts] = number;
+            return  true;
+        } else {
+            return  false;
+        }
     }
 
-    public int getQuantityCalled() {
-        return quantityCalled;
+    public int getCountAttempts() {
+        return countAttempts;
     }
 
-    public void setQuantityCalled() {
-        this.quantityCalled++;
+    public void setCountAttempts() {
+        this.countAttempts++;
     }
 
-    public void setQuantityCalled(int i) {
-        this.quantityCalled = i;
+    public void setCountAttempts(int i) {
+        countAttempts = i;
     }
 }
