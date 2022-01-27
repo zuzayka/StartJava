@@ -20,5 +20,4 @@ class GuessNumberTest {
             } while (!option.equals("yes") && !option.equals("no"));
         } while (option.equals("yes"));
     }
-    
 }
