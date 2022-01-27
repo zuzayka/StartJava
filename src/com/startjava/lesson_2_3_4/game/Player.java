@@ -44,4 +44,5 @@ public class Player {
     public void incrementAttempts(int attempt) {
         countAttempts = attempt;
     }
+
 }
