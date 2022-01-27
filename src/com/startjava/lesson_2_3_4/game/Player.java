@@ -29,20 +29,19 @@ public class Player {
         if (number <= 100 && number > 0) {
             numbers[countAttempts] = number;
             return  true;
-        } else {
-            return  false;
         }
+        return  false;
     }
 
     public int getCountAttempts() {
         return countAttempts;
     }
 
-    public void setCountAttempts() {
-        this.countAttempts++;
+    public void incrementAttempts() {
+        countAttempts++;
     }
 
-    public void setCountAttempts(int i) {
-        countAttempts = i;
+    public void incrementAttempts(int attempt) {
+        countAttempts = attempt;
     }
 }
