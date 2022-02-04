@@ -1,4 +1,4 @@
---
+-- ключ psql -d jaegers -U postgres -f /var/lib/postgres/init_db.sql
 -- PostgreSQL database dump
 --
 
@@ -68,4 +68,3 @@ ALTER TABLE ONLY public.jaegers
 --
 -- PostgreSQL database dump complete
 --
-
