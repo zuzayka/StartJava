@@ -1,4 +1,4 @@
--- ключ psql -d jaegers -f /var/lib/postgres/queries.sql
+-- ключ psql -d jaegers -f '/home/miux/Java/src/com/startjava/lesson_5/queries.sql'
 SELECT * FROM jaegers;
 SELECT * FROM jaegers WHERE status = 'active';
 SELECT * FROM jaegers WHERE mark = 'Mark-2' OR mark = 'Mark-6';

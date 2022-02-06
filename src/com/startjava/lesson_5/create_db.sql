@@ -1,4 +1,4 @@
--- ключ psql -d jaegers -U postgres -f /var/lib/postgres/init_db.sql
+-- ключ psql -d jaegers -U postgres -f '/home/miux/Java/src/com/startjava/lesson_5/create_db.sql'
 
 CREATE TABLE public.Jaegers (
     id integer NOT NULL,

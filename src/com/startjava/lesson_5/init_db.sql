@@ -1,4 +1,4 @@
--- ключ psql -d jaegers -U postgres -f /var/lib/postgres/init_db.sql
+-- ключ psql -d jaegers -U postgres -f '/home/miux/Java/src/com/startjava/lesson_5/init_db.sql
 
 COPY public.jaegers (id, modelname, mark, height, weight, status, origin, launch, kaijukill) FROM stdin;
 1	Saber Athena	Mark-7	76.91	1628	destroyed	Japan	2033-12-20	1
