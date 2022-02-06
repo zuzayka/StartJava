@@ -1,47 +1,4 @@
 -- ключ psql -d jaegers -U postgres -f /var/lib/postgres/init_db.sql
--- PostgreSQL database dump
---
-
--- Dumped from database version 13.4
--- Dumped by pg_dump version 13.4
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET xmloption = content;
-SET client_min_messages = warning;
-SET row_security = off;
-
-SET default_tablespace = '';
-
-SET default_table_access_method = heap;
-
---
--- Name: jaegers; Type: TABLE; Schema: public; Owner: postgres
---
-
-CREATE TABLE public.jaegers (
-    id integer NOT NULL,
-    modelname text,
-    mark text,
-    height real,
-    weight integer,
-    status text,
-    origin text,
-    launch date,
-    kaijukill integer
-);
-
-
-ALTER TABLE public.jaegers OWNER TO postgres;
-
---
--- Data for Name: jaegers; Type: TABLE DATA; Schema: public; Owner: postgres
---
 
 COPY public.jaegers (id, modelname, mark, height, weight, status, origin, launch, kaijukill) FROM stdin;
 1	Saber Athena	Mark-7	76.91	1628	destroyed	Japan	2033-12-20	1
@@ -54,17 +11,3 @@ COPY public.jaegers (id, modelname, mark, height, weight, status, origin, launch
 8	Shaolin Rogue	Mark-3	57.29	1425	destroyed	China	2017-08-14	2
 9	Chronos Berserker	Mark-5	52.74	1317	active	Australia	2019-05-01	0
 10	Murder Witch	Mark-6	71.55	1816	destroyed	Australia	2032-10-28	0
-\.
-
-
---
--- Name: jaegers jaegers_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public.jaegers
-    ADD CONSTRAINT jaegers_pkey PRIMARY KEY (id);
-
-
---
--- PostgreSQL database dump complete
---
