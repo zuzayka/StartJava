@@ -12,3 +12,6 @@
 # добавила Intellij IDEA
 Java.iml
 /.idea
+
+#все файлы в каткалоге basejava
+/basejava
