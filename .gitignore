@@ -1,7 +1,7 @@
 #комментарий к файлу .gitignore
 
 #все файлы в каталоге out
-/out
+out/
 
 #все файлы в каталоге Trash
 /Trash
@@ -15,3 +15,6 @@ Java.iml
 
 #все файлы в каткалоге basejava
 /basejava
+
+#все файлы в каткалоге codewars
+/codewars
